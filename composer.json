@@ -1,5 +1,5 @@
 {
-	"name": "uam/propel-addressable-behavior",
+	"name": "opichon/propel-addressable-behavior",
 	"description": "A Propel behavior that adds address-related fields to a table.",
 	"keywords": ["Address", "propel", "behavior"],
 	"license": "MIT",
