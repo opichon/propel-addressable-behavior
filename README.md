@@ -15,8 +15,7 @@ Get the code by adding the following line to your `composer.json` file:
 
 ```yaml
 	require: {
-		…
-		"uam/propel-addressable-behavior": "dev-master"
+		"opichon/propel-addressable-behavior": "dev-master"
 	}
 ```
 
