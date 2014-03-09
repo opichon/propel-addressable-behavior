@@ -7,9 +7,9 @@ class AddressableBehavior extends Behavior
     protected $parameters = array(
         'address1_column' => 'address',
         'address2_column' => 'address2',
-        'city_column' => 'city',
-        'postal_code_column' => 'zip',
-        'state_column' => 'state',
+        'locality_column' => 'locality',
+        'region_column' => 'region',
+        'postal_code_column' => 'postal_code',
         'country_id_column' => 'country_id'
     );
 
@@ -37,13 +37,23 @@ class AddressableBehavior extends Behavior
             ));
         }
 
-        $columnName = $this->getParameter('city_column');
+        $columnName = $this->getParameter('locality_column');
         // add the column if not present
         if (!$this->getTable()->containsColumn($columnName)) {
             $column = $this->getTable()->addColumn(array(
                 'name' => $columnName,
                 'type' => 'VARCHAR',
                 'size' => 100
+            ));
+        }
+
+        $columnName = $this->getParameter('region_column');
+        // add the column if not present
+        if (!$this->getTable()->containsColumn($columnName)) {
+            $column = $this->getTable()->addColumn(array(
+                'name' => $columnName,
+                'type' => 'VARCHAR',
+                'size' => 30
             ));
         }
 
@@ -54,16 +64,6 @@ class AddressableBehavior extends Behavior
                 'name' => $columnName,
                 'type' => 'VARCHAR',
                 'size' => 20
-            ));
-        }
-
-        $columnName = $this->getParameter('state_column');
-        // add the column if not present
-        if (!$this->getTable()->containsColumn($columnName)) {
-            $column = $this->getTable()->addColumn(array(
-                'name' => $columnName,
-                'type' => 'VARCHAR',
-                'size' => 30
             ));
         }
 
