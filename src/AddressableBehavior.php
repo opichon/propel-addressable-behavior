@@ -13,6 +13,17 @@ class AddressableBehavior extends Behavior
         'country_id_column' => 'country_id'
     );
 
+    protected $objectBuilderModifier;
+
+    public function getObjectBuilderModifier()
+    {
+        if (is_null($this->objectBuilderModifier)) {
+            $this->objectBuilderModifier = new AddressableBehaviorObjectBuilderModifier($this);
+        }
+
+        return $this->objectBuilderModifier;
+    }
+
     public function modifyTable()
     {
         $table = $this->getTable();
