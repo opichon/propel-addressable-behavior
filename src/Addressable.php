@@ -2,7 +2,7 @@
 
 interface Addressable
 {
-	public function getAddressLIne1();
+	public function getAddress();
 
 	public function getAddress2();
 
