@@ -29,6 +29,21 @@ class AddressableBehaviorObjectBuilderModifier
         $this->setBuilder($builder);
         $script = '';
 
+        $this->addGetAddressableMethod($script);
+
         return $script;
+    }
+
+    protected function addGetAddressableMethod(&$script)
+    {
+        $script .= "
+/**
+ * Returns the object itself.
+ */
+public function getAddressable()
+{
+    return \$this;
+}
+";
     }
 }
