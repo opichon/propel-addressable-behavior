@@ -23,4 +23,12 @@ class AddressableBehaviorObjectBuilderModifier
             '\\Addressable'
         );
     }
+
+    public function objectMethods($builder)
+    {
+        $this->setBuilder($builder);
+        $script = '';
+
+        return $script;
+    }
 }
